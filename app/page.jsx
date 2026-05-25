@@ -98,6 +98,23 @@ export default function DashboardPage() {
           </div>
         </div>
         <div className="header-right">
+          <img src="/WhiteLogo.png" alt="Kutlerri" className="header-logo" />
+        </div>
+      </div>
+
+      <div className="tabs-row">
+        <div className="tabs">
+          {TABS.map(t => (
+            <button
+              key={t.id}
+              className={`tab${activeTab === t.id ? ' active' : ''}`}
+              onClick={() => setActiveTab(t.id)}
+            >
+              {t.label}
+            </button>
+          ))}
+        </div>
+        <div className="tabs-controls">
           {sheets.length > 1 && (
             <div className="period-selector">
               <label>Period:</label>
@@ -114,18 +131,6 @@ export default function DashboardPage() {
           )}
           <button className="logout-btn" onClick={handleLogout}>Sign out</button>
         </div>
-      </div>
-
-      <div className="tabs">
-        {TABS.map(t => (
-          <button
-            key={t.id}
-            className={`tab${activeTab === t.id ? ' active' : ''}`}
-            onClick={() => setActiveTab(t.id)}
-          >
-            {t.label}
-          </button>
-        ))}
       </div>
 
       {dataLoading && (

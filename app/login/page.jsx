@@ -28,11 +28,13 @@ export default function LoginPage() {
 
   return (
     <div className="login-page">
-      <div className="login-card">
-        <div className="login-logo">
-          <span>RASA Analytics</span>
-        </div>
-        <div className="login-title">Menu Product Mix Dashboard</div>
+      <div className="login-wrap">
+        <img src="/WhiteLogo.png" alt="Kutlerri" className="login-brand" />
+        <div className="login-card">
+          <div className="login-logo">
+            <span>RASA Analytics</span>
+          </div>
+          <div className="login-title">Menu Product Mix Dashboard</div>
 
         <form onSubmit={handleSubmit}>
           <div className="form-group">
@@ -61,6 +63,7 @@ export default function LoginPage() {
           </button>
           {error && <div className="login-error">{error}</div>}
         </form>
+        </div>
       </div>
     </div>
   );

@@ -41,7 +41,13 @@ body {
 }
 .header h1 { font-size: 18px; font-weight: 600; letter-spacing: -0.3px; }
 .header-sub { font-size: 12px; opacity: 0.6; margin-top: 2px; }
-.header-right { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.header-right { display: flex; align-items: center; }
+.header-logo {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
 .period-badge {
   background: var(--accent);
   color: #fff;
@@ -96,10 +102,31 @@ body {
 .logout-btn:hover { background: rgba(255,255,255,0.1); }
 
 /* ---------- Tabs ---------- */
+.tabs-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.tabs-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.tabs-controls .period-selector label { color: var(--text); }
+.tabs-controls .logout-btn {
+  color: var(--text);
+  border: 1px solid var(--border);
+  background: var(--card);
+  box-shadow: var(--shadow);
+}
+.tabs-controls .logout-btn:hover { background: #f3f4f6; }
 .tabs {
   display: flex;
   gap: 4px;
-  margin-bottom: 20px;
   background: var(--card);
   border-radius: var(--radius);
   padding: 5px;
@@ -303,12 +330,25 @@ tbody tr:hover { background: #fafafa; }
   background: linear-gradient(135deg, #1e0a4a 0%, #381d7c 60%, #5b21b6 100%);
   padding: 20px;
 }
+.login-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  max-width: 420px;
+}
+.login-brand {
+  height: 56px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
 .login-card {
   background: #fff;
   border-radius: 20px;
   padding: 40px 44px;
   width: 100%;
-  max-width: 420px;
   box-shadow: 0 20px 60px rgba(0,0,0,0.3);
 }
 .login-logo { margin-bottom: 8px; }
