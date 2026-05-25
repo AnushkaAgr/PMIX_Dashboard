@@ -9,7 +9,8 @@ export const runtime = 'nodejs';
 const DATA_DIR = path.join(process.cwd(), 'data');
 const cache = new Map();
 
-export async function GET(request, { params }) {
+export async function GET(request, props) {
+  const params = await props.params;
   if (!verifyAuth(request)) {
     return NextResponse.json({ error: 'Invalid or expired token' }, { status: 401 });
   }
